@@ -41,7 +41,7 @@ def getContours(img):
         area = cv2.contourArea(ctn)
         print(area)
         if area > 500:
-            cv2.drawContours(imgContour, ctn, -1, (255, 0, 0), 2)
+            cv2.drawContours(imgContour, ctn, -1, (78, 0, 25), 2)
             peri = cv2.arcLength(ctn, True)
             #print(peri)
             approx = cv2.approxPolyDP(ctn, 0.02*peri, True)
@@ -59,8 +59,7 @@ def getContours(img):
             elif objCor == 5: objectType = "Pen"
             elif objCor > 6: objectType = "Cir"
             cv2.rectangle(imgContour, (x, y), (x + w, y + h), (0, 255, 0), 2)
-            cv2.putText(imgContour, objectType, (x + (w//2)-10, y + (h//2) -10), cv2.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 0), 1)
-
+            cv2.putText(imgContour, objectType, (x + (w//2)-10, y + (h//2) -10), cv2.FONT_HERSHEY_COMPLEX, 0.35, (0, 0, 0), 1)
 
 path = "../imgs/shapes.png"
 img = cv2.imread(path)
