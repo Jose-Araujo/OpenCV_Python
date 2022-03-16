@@ -34,7 +34,7 @@ resuldadoAdaptativo = np.vstack([
 #THRESHHOLD COM OTSU E RIDDLER-CALVARD
 
 T = mahotas.thresholding.otsu(suave)
-temp = img.copy()
+temp = suave.copy()
 
 temp[temp > T] = 255
 temp[temp < 255] = 0
