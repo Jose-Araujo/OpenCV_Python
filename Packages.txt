@@ -1,0 +1,11 @@
+Python Packages utilizados para a aplicação da biblioteca OpenCV
+
+Python 3.8.10
+-------------------------------------
+opencv-python (version 4.5.5.62)
+tk
+matplotlib
+mahotas
+Pillow
+--------------------------------------
+ROS2 - 

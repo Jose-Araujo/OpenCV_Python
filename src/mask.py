@@ -9,7 +9,7 @@ cv2.imshow("Original", img)
 mascara = np.zeros(img.shape[:2], dtype="uint8")
 (cX, cY) = (img.shape[1] // 2, img.shape[0] // 2)
 cv2.circle(mascara, (cX, cY), 100, 255, -1)
-cv2.imshow("Mascara1", mascara)
+#cv2.imshow("Mascara1", mascara)
 img_com_mascara1 = cv2.bitwise_and(img, img, mask=mascara)
 
 cv2.circle(mascara, (cX, cY), 180, 255, 70) #Colcoa a mascara, raio, cor, espessura do circulo
@@ -17,9 +17,15 @@ cv2.circle(mascara, (cX, cY), 70, 255, -1)
 cv2.imshow("Mascara2", mascara)
 img_com_mascara2 = cv2.bitwise_and(img, img, mask = mascara)
 
-cv2.imshow("Mascara aplicada a imagem1", img_com_mascara1)
+#cv2.imshow("Mascara aplicada a imagem1", img_com_mascara1)
 cv2.imshow("Mascara aplicada a imagem2", img_com_mascara2)
 
+
+temp = np.vstack([
+    np.hstack([img, img_com_mascara2])
+])
+
+cv2.imshow("Mascara", temp)
 ####SISTEMA DE CORES
 
 # img = cv2.imread('../imgs/Lenna.png')
